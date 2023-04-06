@@ -1,19 +1,6 @@
-function renderLicenseSection(license) {
-  if (license === "None") {
-    return "This project is not licensed.";
-  } else {
-    return `This project is licensed under the ${license} license.`;
-  }
-}
-
 function generateMarkdown(data) {
   return `# ${data.title}
   
-  ![github license](http://img.shields.io/badge/license-${
-    data.license
-  }-informational.svg)
-
-
   ## Description
   
   ${data.description}
@@ -35,10 +22,6 @@ function generateMarkdown(data) {
   
   ${data.usage}
   
-  ## License
-  
-  ${renderLicenseSection(data.license)}
-  
   ## Contributing
   
   ${data.contributing}
@@ -51,9 +34,25 @@ function generateMarkdown(data) {
 
   For any questions, feel free to contact me on GitHub or by email:
 
-  - [GitHub: ${data.github}](https://github.com/${data.github})
+  - GitHub: [${data.github}](https://github.com/${data.github})
   - Email: ${data.email}
-  `;
+    
+  ## License
+  
+  ${renderLicenseSection(data.license)}
+
+  ![github license](http://img.shields.io/badge/license-${
+    data.license
+  }-informational.svg)
+`;
 }
+function renderLicenseSection(license) {
+  if (license === "None") {
+    return "This project is not licensed.";
+  } else {
+    return `This project is licensed under the ${license} license.`;
+  }
+}
+
 
 module.exports = generateMarkdown;

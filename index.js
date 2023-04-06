@@ -25,12 +25,6 @@ const questions = [
     message: 'Enter usage information for your project:',
   },
   {
-    type: 'list',
-    name: 'license',
-    message: 'Choose a license for your project:',
-    choices: ['MIT', 'Apache 2.0', 'None'],
-  },
-  {
     type: 'input',
     name: 'contributing',
     message: 'Enter contribution guidelines for your project:',
@@ -49,6 +43,12 @@ const questions = [
     type: 'input',
     name: 'email',
     message: 'Enter your email address:',
+  },
+  {
+    type: 'list',
+    name: 'license',
+    message: 'Choose a license for your project:',
+    choices: ['MIT', 'Apache 2.0', 'None'],
   },
 ];
 
